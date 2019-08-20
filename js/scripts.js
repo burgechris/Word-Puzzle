@@ -8,9 +8,7 @@ $(document).ready(function(){
 
   $('#output').text();
     var string = $('#result').text();
-    console.log(string);
     var newString = makePuzzle(string);
-    console.log(newString);
     $('#output').text(newString);
 
 });
@@ -20,13 +18,13 @@ $(document).ready(function(){
 var makePuzzle = function(string){
 
   var newString = '';
+
   for(var count = 0; count < string.length; count += 1) {
     var letter = string.charAt(count);
-    console.log(letter);
     if ((letter === 'a' || letter === 'e')|| ((letter === 'i' || letter === 'o') || (letter === 'u'))) {
       letter = '-';
+    }
+    newString += letter;
   }
-  newString += letter;
-}
   return newString;
 }
